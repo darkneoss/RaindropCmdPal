@@ -25,6 +25,12 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
 
+  <!-- Copy the assets next to AppxManifest.xml so `Add-AppxPackage -Register` on the dotnet build output has its
+       icons. Only VS Deploy lays out an AppX folder; plain dotnet build does not. -->
+  <ItemGroup>
+    <Content Update="Assets\*.png" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
   <ItemGroup>
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
