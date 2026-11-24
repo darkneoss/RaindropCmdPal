@@ -75,7 +75,7 @@ Write-Host "Certificate trusted: $($imported.Subject)  [$($imported.Thumbprint)]
 Write-Step "Installing the extension ($arch)"
 # The package is self-contained .NET 10 with no PackageDependency entries, so there is nothing else to install.
 Add-AppxPackage -Path $msix -ForceApplicationShutdown
-$pkg = Get-AppxPackage -Name 'darkneoss.RaindropCmdPal'
+$pkg = Get-AppxPackage -Name 'darkneoss.RaindropforCommandPalette'
 if (-not $pkg -or $pkg.Status -ne 'Ok') { throw 'The extension did not install correctly (Get-AppxPackage shows no Status=Ok).' }
 Write-Host "Installed: $($pkg.PackageFullName)  Status=$($pkg.Status)" -ForegroundColor Green
 

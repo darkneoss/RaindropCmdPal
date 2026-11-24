@@ -30,7 +30,7 @@ if (-not $state) { Write-Warning 'No state.json found: will only remove the exte
 
 # --- 1. Extension + settings -------------------------------------------------------------------------------
 Write-Step 'Removing the extension'
-$pkg = Get-AppxPackage -Name 'darkneoss.RaindropCmdPal'
+$pkg = Get-AppxPackage -Name 'darkneoss.RaindropforCommandPalette'
 if ($pkg) {
     $familyName = $pkg.PackageFamilyName
     Remove-AppxPackage -Package $pkg.PackageFullName
@@ -42,9 +42,9 @@ if ($pkg) {
 
 Write-Step 'Deleting settings (contain the token)'
 # Settings live in the package's app data:
-#   %LOCALAPPDATA%\Packages\darkneoss.RaindropCmdPal_xqvq36396d696\LocalState\settings.json
+#   %LOCALAPPDATA%\Packages\darkneoss.RaindropforCommandPalette_1egvxjvtdrd2w\LocalState\settings.json
 # Remove-AppxPackage normally deletes this folder; this makes sure, even if the uninstall failed.
-$settingsDir = Join-Path $env:LOCALAPPDATA 'Packages\darkneoss.RaindropCmdPal_xqvq36396d696'
+$settingsDir = Join-Path $env:LOCALAPPDATA 'Packages\darkneoss.RaindropforCommandPalette_1egvxjvtdrd2w'
 if (Test-Path $settingsDir) {
     Remove-Item -Recurse -Force $settingsDir
     Write-Host "Deleted $settingsDir"
@@ -60,7 +60,7 @@ if ($thumb -and (Test-Path "Cert:\LocalMachine\TrustedPeople\$thumb")) {
     Write-Host "Removed certificate $thumb"
 } else {
     Get-ChildItem 'Cert:\LocalMachine\TrustedPeople' |
-        Where-Object { $_.Subject -eq 'CN=darkneoss' } |
+        Where-Object { $_.Subject -eq 'CN=042B73EC-9E03-4437-8640-580CF72BA404' } |
         ForEach-Object { Remove-Item $_.PSPath; Write-Host "Removed certificate $($_.Thumbprint)" }
 }
 

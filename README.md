@@ -21,7 +21,7 @@ cannot load the .NET 10 SDK tasks (it fails with `MSB4018 ... Microsoft.Deployme
 ```powershell
 dotnet build RaindropExtension.sln -p:Configuration=Debug -p:Platform=x64
 Add-AppxPackage -Register .\RaindropExtension\bin\x64\Debug\net10.0-windows10.0.26100.0\win-x64\AppxManifest.xml
-Get-AppxPackage darkneoss.RaindropCmdPal   # expect Status: Ok
+Get-AppxPackage darkneoss.RaindropforCommandPalette   # expect Status: Ok
 ```
 
 Use `-p:Platform=ARM64` (and the matching `win-arm64` output folder) on ARM machines. Visual Studio 2026's

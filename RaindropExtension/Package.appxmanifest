@@ -9,14 +9,14 @@
   IgnorableNamespaces="uap uap3 rescap">
 
   <Identity
-    Name="darkneoss.RaindropCmdPal"
-    Publisher="CN=darkneoss"
-    Version="0.0.1.0" />
-  <!-- When you're ready to publish your extension, you'll need to change the
-       Publisher= to match your own identity -->
+    Name="darkneoss.RaindropforCommandPalette"
+    Publisher="CN=042B73EC-9E03-4437-8640-580CF72BA404"
+    Version="1.0.0.0" />
+  <!-- Identity assigned by Partner Center (Store ID 9PP82HR3HD8T). Name and Publisher must match it exactly,
+       and DisplayName must be the reserved name, or the Store rejects the upload. -->
 
   <Properties>
-    <DisplayName>Raindrop</DisplayName>
+    <DisplayName>Raindrop for Command Palette</DisplayName>
     <PublisherDisplayName>darkneoss</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -35,8 +35,8 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="Raindrop"
-        Description="Raindrop"
+        DisplayName="Raindrop for Command Palette"
+        Description="Search your Raindrop.io bookmarks from PowerToys Command Palette"
         BackgroundColor="transparent"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png">
