@@ -21,6 +21,10 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
+# Windows PowerShell 5.1 can leave $PSScriptRoot empty in param() defaults, so resolve the folder here.
+if (-not $Folder) { $Folder = Split-Path -Parent $MyInvocation.MyCommand.Path }
+if (-not $Folder) { $Folder = (Get-Location).Path }
+
 function Write-Step($msg) { Write-Host "`n==> $msg" -ForegroundColor Cyan }
 
 # --- Preconditions -----------------------------------------------------------------------------------------
